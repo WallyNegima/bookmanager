@@ -23,5 +23,8 @@ RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERS
   && entrykit --symlink
 
 ENTRYPOINT [ \
-  "prehook", "gem update bundler", "--", \
-  "prehook", "bundle install", "--"]
+  "prehook",
+    "gem update bundler", "--", \
+    "bundle install", "--", \
+    "if [ -e ./tmp/pids/server.pid ]; then rm ./tmp/pids/server.pid; fi", "--" \
+    ]
