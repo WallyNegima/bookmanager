@@ -22,7 +22,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/db/migrate/20170617073447_add_columns_to_users.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/test/fixtures/users.yml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/test/models/user_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookmanager_app/.gitignore" afterPath="$PROJECT_DIR$/bookmanager_app/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookmanager_app/Dockerfile" afterPath="$PROJECT_DIR$/bookmanager_app/Dockerfile" />
@@ -67,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.slim" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.html.slim" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -77,17 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bookmanager_app/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bookmanager_app/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -294,7 +283,7 @@
       <updated>1497676589384</updated>
       <workItem from="1497676592723" duration="4606000" />
       <workItem from="1497683162207" duration="2554000" />
-      <workItem from="1497706915576" duration="223000" />
+      <workItem from="1497706915576" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="docker-compose.proxy.yml をbookmanager_appイメージを使って起動するようにしました">
       <created>1497683014949</created>
@@ -335,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7383000" />
+    <option name="totallyTimeSpent" value="7472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -395,7 +384,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="docker-compose.proxy.yml をbookmanager_appイメージを使って起動するようにしました" />
     <MESSAGE value="userモデルを追加しました." />
-    <option name="LAST_COMMIT_MESSAGE" value="userモデルを追加しました." />
+    <MESSAGE value="userモデルを追加しました..." />
+    <option name="LAST_COMMIT_MESSAGE" value="userモデルを追加しました..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -572,18 +562,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookmanager_app/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -595,10 +586,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookmanager_app/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
