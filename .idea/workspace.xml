@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4367e486-df64-4c91-b509-bb0ef7bca831" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/app/models/user.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/app/views/devise/confirmations/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/app/views/devise/mailer/confirmation_instructions.html.erb" />
@@ -23,8 +22,9 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/db/migrate/20170617073447_add_columns_to_users.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/test/fixtures/users.yml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bookmanager_app/test/models/user_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookmanager_app/.gitignore" afterPath="$PROJECT_DIR$/bookmanager_app/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookmanager_app/Dockerfile" afterPath="$PROJECT_DIR$/bookmanager_app/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim" afterPath="$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookmanager_app/config/routes.rb" afterPath="$PROJECT_DIR$/bookmanager_app/config/routes.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,11 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.slim" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.html.slim" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bookmanager_app/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -129,6 +139,7 @@
         <option value="$PROJECT_DIR$/bookmanager_app/Dockerfile" />
         <option value="$PROJECT_DIR$/bookmanager_app/db/migrate/20170617072646_devise_create_users.rb" />
         <option value="$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim" />
+        <option value="$PROJECT_DIR$/bookmanager_app/.gitignore" />
       </list>
     </option>
   </component>
@@ -404,7 +415,7 @@
       <option name="presentableId" value="Default" />
       <updated>1497676589384</updated>
       <workItem from="1497676592723" duration="4606000" />
-      <workItem from="1497683162207" duration="2305000" />
+      <workItem from="1497683162207" duration="2384000" />
     </task>
     <task id="LOCAL-00001" summary="docker-compose.proxy.yml をbookmanager_appイメージを使って起動するようにしました">
       <created>1497683014949</created>
@@ -427,11 +438,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497685472728</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="userモデルを追加しました.">
+      <created>1497685661108</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1497685661108</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6911000" />
+    <option name="totallyTimeSpent" value="6990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -621,7 +639,15 @@
     <entry file="file://$PROJECT_DIR$/bookmanager_app/app/views/layouts/application.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookmanager_app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding />
         </state>
       </provider>
