@@ -27,3 +27,4 @@ ENTRYPOINT [ \
     "gem update bundler", \
     "bundle install", "--" \
 ]
+

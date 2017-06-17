@@ -283,7 +283,7 @@
       <updated>1497676589384</updated>
       <workItem from="1497676592723" duration="4606000" />
       <workItem from="1497683162207" duration="2554000" />
-      <workItem from="1497706915576" duration="312000" />
+      <workItem from="1497706915576" duration="356000" />
     </task>
     <task id="LOCAL-00001" summary="docker-compose.proxy.yml をbookmanager_appイメージを使って起動するようにしました">
       <created>1497683014949</created>
@@ -324,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7472000" />
+    <option name="totallyTimeSpent" value="7516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
