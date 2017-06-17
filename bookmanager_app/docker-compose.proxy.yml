@@ -7,8 +7,9 @@ services:
     command: bundle exec rails s -p 80 -b '0.0.0.0'
     environment:
       DB_HOST: db
-      HTTP_PROXY: proxy.use.ac.jp:8080
-      HTTPS_PROXY: proxy.use.ac.jp:8080
+      http_proxy: http://proxy.uec.ac.jp:8080
+      https_proxy: http://proxy.uec.ac.jp:8080
+      ftp_proxy: http://proxy.uec.ac.jp:8080
     volumes:
       - .:/app
       - bundle:/app/bundle
