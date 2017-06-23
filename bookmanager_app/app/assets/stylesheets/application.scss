@@ -45,6 +45,7 @@ $menuFontSize: 20px;
   line-height: $menuFontSize+5px;
 }
 
-.content{
+.content {
   @include grid-column(1, $article-layout-grid);
-｝
+}
+
