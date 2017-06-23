@@ -1,2 +1,50 @@
 @import "bourbon";
 @import "neat";
+
+.clearfix:after {
+  content:" ";
+  display:block;
+  clear:both;
+}
+
+
+.page{
+  @include grid-container;
+}
+
+$article-layout-grid: (
+        columns: 1,
+        gutter: 2rem,
+);
+
+.topNav{
+  @include grid-column(1, $article-layout-grid);
+  padding:0px;
+  margin-bottom: 1rem;
+  display: block;
+  background: skyblue;
+  padding:10px;
+  @extend .clearfix;
+}
+
+$menuFontSize: 20px;
+
+.icon{
+  color: black;
+  margin:0px;
+  font-size: $menuFontSize;
+  line-height: $menuFontSize+5px;
+  float: left;
+}
+
+.topNav-menu{
+  color: black;
+  float:right;
+  text-align: center;
+  font-size: $menuFontSize;
+  line-height: $menuFontSize+5px;
+}
+
+.content{
+  @include grid-column(1, $article-layout-grid);
+｝

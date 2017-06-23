@@ -1,7 +1,8 @@
-h1 menu
-- unless user_signed_in?
-  = link_to 'Sign in' , new_user_session_path
-- else
-  = link_to 'Books' , books_path
-  br
-  = link_to 'Sign out' , destroy_user_session_path , :method => :delete
+.topNav
+  h1.icon
+    = link_to 'bookManager', root_path
+  .topNav-menu
+    - unless user_signed_in?
+      = link_to 'Sign in', new_user_session_path
+    - else
+      = link_to 'Sign out', destroy_user_session_path, :method => :delete
