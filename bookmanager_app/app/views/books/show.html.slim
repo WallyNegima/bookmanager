@@ -1,0 +1,19 @@
+h2 book show
+table
+  tr
+    td タイトル
+    td 著者
+    td 内容
+    td ISBN
+  tr
+    td
+      = @book.title
+    td
+      = @book.author
+    td
+      = @book.description
+    td
+      = @book.isbn
+p
+- unless @book.on_loan
+  = link_to 'かりる', ledgers_path(params: {id: @book.id}), :method => :post

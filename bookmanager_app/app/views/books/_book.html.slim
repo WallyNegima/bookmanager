@@ -1,0 +1,14 @@
+tr
+  td
+    = link_to book.title , book_path(book.id)
+  td
+    = book.author
+  td
+    = book.description
+  td
+    = book.isbn
+  td
+    - if book.on_loan
+      貸出中
+    - else
+      = link_to '貸出OK' , book_path(book.id)
