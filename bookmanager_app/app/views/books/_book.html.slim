@@ -1,14 +1,14 @@
-tr
-  td
+tr.row
+  td.col-3
     = link_to book.title , book_path(book.id)
-  td
+  td.col-2
     = book.author
-  td
+  td.col-4
     = book.description
-  td
+  td.col-2
     = book.isbn
-  td
+  td.col-1
     - if book.on_loan
-      貸出中
+      | 貸出中
     - else
       = link_to '貸出OK' , book_path(book.id)
