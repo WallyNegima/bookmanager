@@ -56,32 +56,34 @@ $menuFontSize: 20px;
 }
 
 $book-grid: (
-        columns: 12,
-        gutter: 10px,
+        columns: 4,
+        gutter: 20px,
 );
 
 .book{
-  .col-1 {
-    @include grid-column(1,$book-grid);
-  }
-  .col-2 {
-    @include grid-column(2,$book-grid);
-  }
-  .col-3 {
-    @include grid-column(3,$book-grid);
-  }
-  .col-4 {
-    @include grid-column(4,$book-grid);
-  }
-  .col-5 {
-    @include grid-column(5,$book-grid);
-  }
-  .row{
-    border: solid rgba(255, 144, 10, 0.44);
-  }
-  .content{
-    border-collapse:collapse;
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
+  border: 2px solid rgba(255, 144, 10, 0.44);
+  margin-bottom: 10px;
+  .contener{
+    @include grid-container;
+    .col-1 {
+      @include grid-column(1,$book-grid);
+    }
+    .col-2 {
+      @include grid-column(2,$book-grid);
+    }
+    .col-3 {
+      @include grid-column(3,$book-grid);
+    }
 
   }
-
+  .title{
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .author{
+    margin-bottom: 5px;
+  }
 }

@@ -1,20 +1,14 @@
 h2 Book show
 .book
-  table.content
-    tr
-      td.col-3 タイトル
-      td.col-2 著者
-      td.col-5 内容
-      td.col-2 ISBN
-    tr
-      td.col-3
-        = @book.title
-      td.col-2
-        = @book.author
-      td.col-5
-        = @book.description
-      td.col-2
-        = @book.isbn
+  h2.title タイトル
+  h3.author 著者
+  p.description 内容
+  h3.isbn ISBN
+
+  = @book.title
+  = @book.author
+  = @book.description
+  = @book.isbn
   p
   - unless @book.on_loan
     = link_to 'かりる', ledgers_path(params: {id: @book.id}), :method => :post
