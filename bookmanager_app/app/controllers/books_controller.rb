@@ -3,6 +3,12 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  def create
+  end
+
+  def new
+  end
+
   def edit
   end
 
