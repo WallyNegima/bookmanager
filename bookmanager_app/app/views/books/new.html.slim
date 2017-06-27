@@ -1,6 +1,11 @@
 div
   video#video
 form#control
+
+= form_with url: books_path do |f|
+  = f.text_field :isbn
+  = f.submit 'Search'
+
 javascript:
   var video = document.getElementById("video");
   var control = document.getElementById("control");
