@@ -38,11 +38,17 @@ $menuFontSize: 20px;
 }
 
 .topNav-menu{
+  float: right;
+  margin:0px;
   color: black;
-  float:right;
-  text-align: center;
-  font-size: $menuFontSize;
-  line-height: $menuFontSize+5px;
+  li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left:3px;
+    font-size: $menuFontSize;
+    line-height: $menuFontSize+5px;
+    text-align: center;
+  }
 }
 
 .content {
