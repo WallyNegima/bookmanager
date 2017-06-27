@@ -1,4 +1,15 @@
 p hello
 p = @user.email
 
-p = @ledgers
+table
+  thead
+    tr
+      tr title
+      tr 返却
+  tbody.ledgerList
+    - @ledgers.each do |ledger|
+      tr
+        td ledger.book.title
+        td
+          = link_to '返却', '#'
+
