@@ -87,3 +87,79 @@ $book-grid: (
     margin-bottom: 5px;
   }
 }
+
+
+//説明文を指定した高さで省略
+// Variables
+$container-bg: #eee;
+$font-size-base: 14px;
+$line-height-computed: 1.4;
+$lines-to-show: 3;
+
+// Reset
+p {
+  margin: 0;
+}
+
+// Multiline text with ellipsis
+// Supported IE and Firefox
+.description {
+  background: white;
+  overflow: hidden;
+  width: 100%;
+  p {
+    font-size: $font-size-base;
+    height: $font-size-base * $line-height-computed * $lines-to-show;
+    line-height: $line-height-computed;
+    text-align: left;
+    position: relative;
+    &:before,
+    &:after {
+      background: white;
+      position: absolute;
+    }
+    &:before {
+      content: "...";
+      top: $font-size-base * $line-height-computed * ($lines-to-show - 1);
+      right: 0;
+    }
+    &:after {
+      content: "";
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+$container-bg: #eee;
+$font-size-base2: 16px;
+$line-height-computed: 1.4;
+$lines-to-show: 3;
+
+.title {
+  background: white;
+  overflow: hidden;
+  width: 100%;
+  h2 {
+    font-size: $font-size-base2;
+    height: $font-size-base2 * $line-height-computed * $lines-to-show;
+    line-height: $line-height-computed;
+    text-align: left;
+    position: relative;
+    &:before,
+    &:after {
+      background: white;
+      position: absolute;
+    }
+    &:before {
+      content: "...";
+      top: $font-size-base2 * $line-height-computed * ($lines-to-show - 1);
+      right: 0;
+    }
+    &:after {
+      content: "";
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

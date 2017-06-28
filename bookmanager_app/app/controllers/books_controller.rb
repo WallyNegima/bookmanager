@@ -11,8 +11,13 @@ class BooksController < ApplicationController
     end
 
     # URIを指定する
+    ## プロキシの設定
+    proxy_addr = 'proxy.uec.ac.jp'
+    proxy_port = 8080
+
     uri = URI.parse('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
-    https = Net::HTTP.new(uri.host, uri.port)
+    https = Net::HTTP.Proxy( proxy_addr, proxy_port)
+    https = https.new(uri.host, uri.port)
     https.use_ssl = true
     res = https.start {
       https.get(uri.request_uri)
