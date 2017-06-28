@@ -2,8 +2,11 @@
   h1.icon
     = link_to 'bookManager', root_path
   ul.topNav-menu
+    li = link_to 'regist book', new_book_path
     li = link_to 'books', books_path
     - unless user_signed_in?
       li = link_to 'Sign in', new_user_session_path
+      li = link_to 'Sign up', new_user_registration_path
     - else
+      li = link_to 'mypage', current_user
       li = link_to 'Sign out', destroy_user_session_path, :method => :delete

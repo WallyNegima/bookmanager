@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, :path => '/'
   resources :books
   resources :ledgers
+  resources :users, :only => [:index, :show]
   get '/book/scan', to: 'books#scan'
 end
