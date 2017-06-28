@@ -1,46 +1,37 @@
-div
-  video#video
-form#control
+section#container.container
+  .controls
+    fieldset.input-group
+      button.stop Stop
+    fieldset.reader-config-group
+      label
+        span Camera
+        select#deviceSelection name="input-stream_constraints"
+      label style=("display: none")
+        span Zoom
+        select name="settings_zoom"
+      label style=("display: none")
+        span Torch
+        input name="settings_torch" type="checkbox" /
 
+  #interactive.viewport
+script src="//webrtc.github.io/adapter/adapter-latest.js" type="text/javascript"
 = form_with url: books_path do |f|
-  = f.text_field :isbn
-  = f.submit 'Search'
+  = f.text_field :isbn , id: 'isbn'
+  = f.submit 'Search', id: 'send'
 
-javascript:
-  var video = document.getElementById("video");
-  var control = document.getElementById("control");
 
-  getVideoSources(function(cam) {
-      console.log("cam", cam);
-      var b = document.createElement("input");
-      b.type = "button";
-      b.value = cam.name;
-      b.onclick = getMain(cam.id);
-      control.appendChild(b);
-      console.log('add button');
-  });
-
-  function getMain(cam_id) {
-      return function() {
-        main(cam_id);
-      };
+css:
+  #interactive.viewport {
+    width: 640px;
+    height: 480px;
   }
 
-  function main(cam_id) {
-      navigator.getUserMedia({
-        audio: false,
-        video: {
-          optional: [
-            { sourceId: cam_id}
-          ]
-        }
-      }, function(stream) { // success
-        console.log("Start Video", stream);
-        localStream = stream;
-        video.src = URL.createObjectURL(stream);
-        video.play();
-        video.volume = 0;
-      }, function(e) { // error
-        console.error("Error on start video: " + e.code);
-      });
-  };
+  #interactive.viewport canvas, video {
+    float: left;
+    width: 640px;
+    height: 480px;
+  }
+
+  #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
+    margin-left: -640px;
+  }

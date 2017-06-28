@@ -86,22 +86,22 @@ $(function() {
             var streamLabel = Quagga.CameraAccess.getActiveStreamLabel();
 
             return Quagga.CameraAccess.enumerateVideoDevices()
-            .then(function(devices) {
-                function pruneText(text) {
-                    return text.length > 30 ? text.substr(0, 30) : text;
-                }
-                var $deviceSelection = document.getElementById("deviceSelection");
-                while ($deviceSelection.firstChild) {
-                    $deviceSelection.removeChild($deviceSelection.firstChild);
-                }
-                devices.forEach(function(device) {
-                    var $option = document.createElement("option");
-                    $option.value = device.deviceId || device.id;
-                    $option.appendChild(document.createTextNode(pruneText(device.label || device.deviceId || device.id)));
-                    $option.selected = streamLabel === device.label;
-                    $deviceSelection.appendChild($option);
+                .then(function(devices) {
+                    function pruneText(text) {
+                        return text.length > 30 ? text.substr(0, 30) : text;
+                    }
+                    var $deviceSelection = document.getElementById("deviceSelection");
+                    while ($deviceSelection.firstChild) {
+                        $deviceSelection.removeChild($deviceSelection.firstChild);
+                    }
+                    devices.forEach(function(device) {
+                        var $option = document.createElement("option");
+                        $option.value = device.deviceId || device.id;
+                        $option.appendChild(document.createTextNode(pruneText(device.label || device.deviceId || device.id)));
+                        $option.selected = streamLabel === device.label;
+                        $deviceSelection.appendChild($option);
+                    });
                 });
-            });
         },
         attachListeners: function() {
             var self = this;
@@ -120,7 +120,7 @@ $(function() {
                     name = $target.attr("name"),
                     state = self._convertNameToState(name);
 
-                console.log("Value of "+ state + " changed to " + value);
+                console.log("Value of "+ state + " changed to " + value + " target " + e.target);
                 self.setState(state, value);
             });
         },
@@ -129,11 +129,8 @@ $(function() {
                 $ul = $("#result_strip ul.collector");
 
             results.forEach(function(result) {
-                var $li = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
-
                 $li.find("img").attr("src", result.frame);
                 $li.find("h4.code").html(result.codeResult.code + " (" + result.codeResult.format + ")");
-                $ul.prepend($li);
             });
         },
         _accessByPath: function(obj, path, val) {
@@ -165,10 +162,10 @@ $(function() {
             var track = Quagga.CameraAccess.getActiveTrack();
             if (track && typeof track.getCapabilities === 'function') {
                 switch (setting) {
-                case 'zoom':
-                    return track.applyConstraints({advanced: [{zoom: parseFloat(value)}]});
-                case 'torch':
-                    return track.applyConstraints({advanced: [{torch: !!value}]});
+                    case 'zoom':
+                        return track.applyConstraints({advanced: [{zoom: parseFloat(value)}]});
+                    case 'torch':
+                        return track.applyConstraints({advanced: [{torch: !!value}]});
                 }
             }
         },
@@ -245,7 +242,7 @@ $(function() {
             frequency: 10,
             decoder: {
                 readers : [{
-                    format: "code_128_reader",
+                    format: "ean_reader",
                     config: {}
                 }]
             },
@@ -290,6 +287,10 @@ $(function() {
             $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
             $node.find("img").attr("src", canvas.toDataURL());
             $node.find("h4.code").html(code);
+            if (code.indexOf("978") == 0){
+                document.getElementById('isbn').value = code;
+            }
+            console.log(code.indexOf("978") == 0);
             $("#result_strip ul.thumbnails").prepend($node);
         }
     });
