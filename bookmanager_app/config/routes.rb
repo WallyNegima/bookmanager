@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users, :path => '/'
   resources :books
   resources :ledgers
+  get '/book/scan', to: 'books#scan'
 end
