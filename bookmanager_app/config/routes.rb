@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :books
   resources :ledgers
   resources :users, :only => [:index, :show]
+  get '/book/scan', to: 'books#scan'
 end

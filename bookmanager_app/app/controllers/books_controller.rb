@@ -51,6 +51,9 @@ class BooksController < ApplicationController
   def edit
   end
 
+  def scan
+  end
+
   def show
     @book = Book.find(params[:id])
   end
