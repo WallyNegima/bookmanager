@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'books#index'
   devise_for :users, :path => '/'
   resources :books
   resources :ledgers
