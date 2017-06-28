@@ -4,7 +4,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    isbn = params[:isbn]
+    isbn = params[:isbn].to_s
+    unless isbn.length == 10 || isbn.length == 13
+      flash[:alert] = 'degit errors occured'
+      return redirect_to new_book_path
+    end
 
     # URIを指定する
     uri = URI.parse('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
@@ -17,8 +21,8 @@ class BooksController < ApplicationController
     if res.code.to_s == '200'
       result = JSON.parse(res.body, {:symbolize_names => true})
       if result[:totalItems] == 0
-        flash.now[:alert] = 'Some errors occured'
-        render :new
+        flash[:alert] = 'Some errors occured'
+        redirect_to new_book_path
         return
       end
       result = result[:items][0][:volumeInfo]
@@ -27,17 +31,16 @@ class BooksController < ApplicationController
                title: result[:title],
                description: result[:description])
       if book.save
-        redirect_to book_path(book.id)
+        flash[:success] = 'success'
+        return redirect_to book_path(book.id)
       end
     else
       flash.now[:alert] = 'Server errors'
-      render :new
+      redirect_to new_book_path
     end
   end
 
   def new
-    flash.now[:alert] = 'Server errors'
-
   end
 
   def edit
