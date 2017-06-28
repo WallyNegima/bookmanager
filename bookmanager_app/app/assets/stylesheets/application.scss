@@ -55,3 +55,35 @@ $menuFontSize: 20px;
   @include grid-column(1, $article-layout-grid);
 }
 
+$book-grid: (
+        columns: 4,
+        gutter: 20px,
+);
+
+.book{
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
+  border: 2px solid rgba(255, 144, 10, 0.44);
+  margin-bottom: 10px;
+  .contener{
+    @include grid-container;
+    .col-1 {
+      @include grid-column(1,$book-grid);
+    }
+    .col-2 {
+      @include grid-column(2,$book-grid);
+    }
+    .col-3 {
+      @include grid-column(3,$book-grid);
+    }
+
+  }
+  .title{
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .author{
+    margin-bottom: 5px;
+  }
+}
