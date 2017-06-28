@@ -1,15 +1,34 @@
 p hello
 p = @user.email
 
+p 借りてる本一覧
+
 table
   thead
     tr
-      tr title
-      tr 返却
+      td title
+      td time
+      td 返却
   tbody.ledgerList
     - @ledgers.each do |ledger|
-      tr
-        td ledger.book.title
-        td
-          = link_to '返却', '#'
+      - if ledger.returned_at == nil
+        tr
+          td = ledger.book.title
+          td = ledger.updated_at
+          td
+            = link_to 'かえす', ledger_path(ledger, params: {id: ledger.id, time: Time.now}), :method => :put
 
+p 借りた本一覧
+table
+  thead
+    tr
+      td title
+      td time
+      td 返却日
+  tbody.ledgerList
+    - @ledgers.each do |ledger|
+      - if ledger.returned_at != nil
+        tr
+          td = ledger.book.title
+          td = ledger.updated_at
+          td = ledger.returned_at
