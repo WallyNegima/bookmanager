@@ -1,4 +1,5 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
+    if( location.pathname == '/books/new'){
     var resultCollector = Quagga.ResultCollector.create({
         capture: true,
         capacity: 20,
@@ -295,4 +296,11 @@ $(function() {
         }
     });
 
-});
+}else{
+        if (!Quagga.CameraAccess.getActiveStreamLabel() == ''){
+            console.log("quagga stop");
+            Quagga.stop();
+        }else{
+            console.log("already quagga stopped");
+        }
+    }});
