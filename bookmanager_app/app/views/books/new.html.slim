@@ -1,7 +1,5 @@
 section#container.container
   .controls
-    fieldset.input-group
-      button.stop Stop
     fieldset.reader-config-group
       label
         span Camera
@@ -14,20 +12,22 @@ section#container.container
         input name="settings_torch" type="checkbox" /
 
   #interactive.viewport
+  = form_with url: books_path do |f|
+    = f.text_field :isbn , id: 'isbn'
+    = f.submit 'Search', id: 'send'
+  .controls
+    button.restart 再読み取り
+
 script src="//webrtc.github.io/adapter/adapter-latest.js" type="text/javascript"
-= form_with url: books_path do |f|
-  = f.text_field :isbn , id: 'isbn'
-  = f.submit 'Search', id: 'send'
-
-
 css:
   #interactive.viewport {
     width: 640px;
     height: 480px;
+    /*margin: auto;*/
   }
 
   #interactive.viewport canvas, video {
-    float: left;
+    /*float: left;*/
     width: 640px;
     height: 480px;
   }
