@@ -37,6 +37,7 @@ gem 'devise'
 gem 'bourbon'
 gem 'neat'
 gem 'rails_admin'
+gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
