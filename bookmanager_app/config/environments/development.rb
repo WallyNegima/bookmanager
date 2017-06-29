@@ -54,4 +54,6 @@ Rails.application.configure do
 
   config.web_console.automount = true
   config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 )
+
+  config.force_ssl = true
 end
