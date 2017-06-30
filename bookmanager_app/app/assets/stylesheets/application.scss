@@ -91,10 +91,6 @@ $menuFontSize: 20px;
   margin: 0 auto;
 }
 
-.bookIndex{
-  background-color: #28CD9B;
-}
-
 .bookShow{
   padding:20px;
   background-color: #28CD9B;
@@ -104,11 +100,15 @@ $book-grid: (
         columns: 6,
 );
 
+.book-link{
+  display: block;
+  margin-top: 1vh;
+  background-color: #28CD9B;
+}
+
 .book{
   text-align: left;
   color: #000000;
-  border: 2px solid rgba(255, 144, 10, 0.44);
-  margin-top: 1vh;
   height: 6vh;
   @include grid-container;
   .col-1 {
