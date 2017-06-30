@@ -3,9 +3,6 @@
 
 html, body{
   margin: 0;         /* 余白の削除 */
-//  padding: 0;        /* 余白の削除 */
-//  width:100%;
-//  height:100%;
   font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   font-size: 18px;
 
@@ -68,40 +65,46 @@ $menuFontSize: 20px;
 }
 
 $book-grid: (
-        columns: 4,
-        gutter: 20px,
+        columns: 6,
 );
 
 .book{
-  text-align: center;
+  text-align: left;
   color: #000000;
   border: 2px solid rgba(255, 144, 10, 0.44);
-  margin-bottom: 10px;
-  height: 15vh;
-  .contener{
-    @include grid-container;
-    .col-1 {
-      @include grid-column(1,$book-grid);
-    }
-    .col-2 {
-      @include grid-column(2,$book-grid);
-    }
-    .col-3 {
-      @include grid-column(3,$book-grid);
-    }
-
+  margin-top: 1vh;
+  height: 6vh;
+  @include grid-container;
+  .col-1 {
+    @include grid-column(1,$book-grid);
+    height: 6vh;
+  }
+  .col-2 {
+    @include grid-column(2,$book-grid);
+    height: 6vh;
+  }
+  .col-3 {
+    @include grid-column(3,$book-grid);
+    height: 6vh;
   }
   h2{
-    margin-bottom: 0px;
   }
   .title{
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-size: 1rem;
+    margin: 0px;
+    font-size: 2vh;
+    padding-top: 1.5vh;
   }
   .author{
-    margin-bottom: 5px;
+    margin: 0;
+    font-size: 2vh;
+    padding-top: 1.5vh;
   }
+  .on_loan{
+    margin: 0;
+    font-size: 2vh;
+    padding-top: 1.5vh;
+  }
+
 }
 
 
@@ -150,16 +153,16 @@ p {
 $container-bg: #eee;
 $font-size-base2: 16px;
 $line-height-computed: 1.4;
-$lines-to-show: 3;
+$lines-to-show: 1;
 
 .title {
   background: white;
   overflow: hidden;
   width: 100%;
-  line-height: 0.5rem;
+  //line-height: 0.5rem;
   h2 {
     //font-size: $font-size-base2;
-    height: $font-size-base2 * $line-height-computed * $lines-to-show;
+    //height: $font-size-base2 * $line-height-computed * $lines-to-show;
     line-height: $line-height-computed;
     text-align: left;
     position: relative;
