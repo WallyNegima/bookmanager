@@ -1,14 +1,13 @@
-h2 Book show
+.bookShow
+  h3.title タイトル
+  p = @book.title
+  h3.author 著者
+  p = @book.author
+  h3.description 内容
+  p = @book.description
+  h3.isbn ISBN
+  p = @book.isbn
 
-h2.title タイトル
-= @book.title
-h3.author 著者
-= @book.author
-p.description 内容
-= @book.description
-h3.isbn ISBN
-= @book.isbn
-
-p
-- unless @book.on_loan
-  = link_to 'かりる', ledgers_path(params: {id: @book.id}), :method => :post
+  p
+  - unless @book.on_loan
+    = link_to 'かりる', ledgers_path(params: {id: @book.id}), :method => :post
