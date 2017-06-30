@@ -1,4 +1,5 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
+    if( location.pathname == '/books/register'){
     var resultCollector = Quagga.ResultCollector.create({
         capture: true,
         capacity: 20,
@@ -24,6 +25,7 @@ $(function() {
     var App = {
         init: function() {
             var self = this;
+            $(".restart").hide();
 
             Quagga.init(this.state, function(err) {
                 if (err) {
@@ -107,10 +109,10 @@ $(function() {
             var self = this;
 
             self.initCameraSelection();
-            $(".controls").on("click", "button.stop", function(e) {
+            $(".controls").on("click", "button.restart", function(e) {
                 e.preventDefault();
-                Quagga.stop();
-                self._printCollectedResults();
+                document.getElementById('isbn').value = '';
+                self.init();
             });
 
             $(".controls .reader-config-group").on("change", "input, select", function(e) {
@@ -122,15 +124,6 @@ $(function() {
 
                 console.log("Value of "+ state + " changed to " + value + " target " + e.target);
                 self.setState(state, value);
-            });
-        },
-        _printCollectedResults: function() {
-            var results = resultCollector.getResults(),
-                $ul = $("#result_strip ul.collector");
-
-            results.forEach(function(result) {
-                $li.find("img").attr("src", result.frame);
-                $li.find("h4.code").html(result.codeResult.code + " (" + result.codeResult.format + ")");
             });
         },
         _accessByPath: function(obj, path, val) {
@@ -282,17 +275,21 @@ $(function() {
 
         if (App.lastResult !== code) {
             App.lastResult = code;
-            var $node = null, canvas = Quagga.canvas.dom.image;
-
-            $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
-            $node.find("img").attr("src", canvas.toDataURL());
-            $node.find("h4.code").html(code);
             if (code.indexOf("978") == 0){
                 document.getElementById('isbn').value = code;
+                $("#interactive").empty();
+                Quagga.stop();
+                $(".restart").show();
             }
             console.log(code.indexOf("978") == 0);
-            $("#result_strip ul.thumbnails").prepend($node);
         }
     });
 
-});
+}else{
+        if (!Quagga.CameraAccess.getActiveStreamLabel() == ''){
+            console.log("quagga stop");
+            Quagga.stop();
+        }else{
+            console.log("already quagga stopped");
+        }
+    }});
