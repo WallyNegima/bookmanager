@@ -35,7 +35,7 @@ $headerHeight:80px;
   margin-bottom:10px;
   //margin-bottom: 1rem;
   display: block;
-  background: #7DAFD3;
+  background: #14B9C3;
   padding:10px;
   height: $headerHeight;
   width: 100%;
@@ -91,8 +91,13 @@ $menuFontSize: 20px;
   margin: 0 auto;
 }
 
+.bookIndex{
+  background-color: #28CD9B;
+}
+
 .bookShow{
   padding:20px;
+  background-color: #28CD9B;
 }
 
 $book-grid: (
@@ -213,4 +218,14 @@ $lines-to-show: 1;
       width: 100%;
     }
   }
+}
+
+.borrowing{
+  background-color: #28CD9B;
+  width: 100%;
+}
+
+.borrowed{
+  background-color: #28CD9B;
+  width: 100%;
 }
