@@ -1,7 +1,6 @@
-p hello
 p = @user.email
 
-p 借りてる本一覧
+h3 借りてる本一覧
 
 table
   thead
@@ -18,7 +17,7 @@ table
           td
             = link_to 'かえす', ledger_path(ledger, params: {id: ledger.id, time: Time.now}), :method => :put
 
-p 借りた本一覧
+h3 借りた本一覧
 table
   thead
     tr

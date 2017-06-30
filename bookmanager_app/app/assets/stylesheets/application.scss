@@ -5,7 +5,11 @@ html, body{
   margin: 0;         /* 余白の削除 */
   font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   font-size: 18px;
+  background-image: image-url("concrete-texture.png");
+}
 
+p{
+  font-size:18px;
 }
 
 .clearfix:after {
@@ -24,14 +28,16 @@ $article-layout-grid: (
         gutter: 2rem,
 );
 
+$headerHeight:80px;
 .topNav{
   @include grid-column(1, $article-layout-grid);
   margin:0px;
+  margin-bottom:10px;
   //margin-bottom: 1rem;
   display: block;
   background: skyblue;
-  //padding:10px;
-  height: 10vh;
+  padding:10px;
+  height: $headerHeight;
   width: 100%;
   @extend .clearfix;
 }
@@ -39,29 +45,50 @@ $article-layout-grid: (
 $menuFontSize: 20px;
 
 .icon{
+  margin:0px;
   color: black;
-  margin:1rem;
-  font-size: $menuFontSize;
-  line-height: $menuFontSize+5px;
+  font-size: $headerHeight - 30px;
+  line-height: $headerHeight;
+  text-align: center;
   float: left;
 }
 
 .topNav-menu{
   float: right;
-  margin:1rem;
+  margin:0px;
   color: black;
   li{
     display: inline-block;
     list-style-type: none;
-    margin-left:3px;
-    font-size: $menuFontSize;
-    line-height: $menuFontSize+5px;
+    margin:4px;
+    padding-left:8px;
+    font-size: $headerHeight - 30px;
+    line-height: $headerHeight;
     text-align: center;
+    a{
+      text-decoration: none;
+    }
   }
+}
+
+.menu-one{
+  border-left: solid 2px black;
+}
+
+.menu-two{
+  border-left: solid 2px black;
 }
 
 .content {
   @include grid-column(1, $article-layout-grid);
+}
+
+.viewport{
+  margin: 0 auto;
+}
+
+.bookShow{
+  padding:20px;
 }
 
 $book-grid: (
@@ -123,7 +150,7 @@ p {
 // Multiline text with ellipsis
 // Supported IE and Firefox
 .description {
-  background: white;
+  background-color: rgba(0,0,0,0);
   overflow: hidden;
   width: 100%;
   p {
@@ -134,7 +161,7 @@ p {
     position: relative;
     &:before,
     &:after {
-      background: white;
+      background-color: rgba(255,255,255,0);
       position: absolute;
     }
     &:before {
@@ -156,7 +183,7 @@ $line-height-computed: 1.4;
 $lines-to-show: 1;
 
 .title {
-  background: white;
+  background-color: rgba(0,0,0,0);
   overflow: hidden;
   width: 100%;
   //line-height: 0.5rem;
@@ -168,7 +195,7 @@ $lines-to-show: 1;
     position: relative;
     &:before,
     &:after {
-      background: white;
+      background-color: rgba(255,255,255,0);
       position: absolute;
     }
     &:before {
