@@ -3,8 +3,8 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
-    command: bundle exec unicorn -p 3000 -c /app/config/unicorn.rb -E production
+      dockerfile: Dockerfile.production
+    command: bundle exec unicorn -p 3000 -c /app/config/unicorn.rb
     environment:
       DB_HOST: db
     volumes:
