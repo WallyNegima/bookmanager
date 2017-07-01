@@ -2,7 +2,7 @@
   h1.icon
     = link_to 'BM', root_path
   ul.topNav-menu
-    li. = link_to 'Regist Book', new_book_path
+    li = link_to 'Regist Book', new_book_path
     // li = link_to 'books', books_path
     - unless user_signed_in?
       li.menu-one = link_to 'Sign in', new_user_session_path
