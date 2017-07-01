@@ -1,6 +1,17 @@
 @import "bourbon";
 @import "neat";
 
+html, body{
+  margin: 0;         /* 余白の削除 */
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-size: 18px;
+  background-image: image-url("concrete-texture.png");
+}
+
+p{
+  font-size:18px;
+}
+
 .clearfix:after {
   content:" ";
   display:block;
@@ -14,85 +25,129 @@
 
 $article-layout-grid: (
         columns: 1,
-        gutter: 2rem,
+        //gutter: 2rem,
 );
 
+$headerHeight:80px;
 .topNav{
   @include grid-column(1, $article-layout-grid);
-  padding:0px;
-  margin-bottom: 1rem;
+  margin:0px;
+  margin-bottom:10px;
+  //margin-bottom: 1rem;
   display: block;
-  background: skyblue;
+  background: #14B9C3;
   padding:10px;
+  height: $headerHeight;
+  width: calc(100% - 20px);
   @extend .clearfix;
 }
 
 $menuFontSize: 20px;
 
 .icon{
-  color: black;
   margin:0px;
-  font-size: $menuFontSize;
-  line-height: $menuFontSize+5px;
+  color: #2B2B2B;
+  font-size: $headerHeight - 30px;
+  line-height: $headerHeight;
+  text-align: center;
   float: left;
+  a{
+    color: #2B2B2B;
+  }
 }
 
 .topNav-menu{
   float: right;
   margin:0px;
-  color: black;
+  color: #2B2B2B;
   li{
     display: inline-block;
     list-style-type: none;
-    margin-left:3px;
-    font-size: $menuFontSize;
-    line-height: $menuFontSize+5px;
+    margin:4px;
+    padding-left:8px;
+    font-size: $headerHeight - 30px;
+    line-height: $headerHeight;
     text-align: center;
+    a{
+      color:#2B2B2B;
+      text-decoration: none;
+    }
   }
+}
+
+.menu-one{
+  border-left: solid 2px black;
+}
+
+.menu-two{
+  border-left: solid 2px black;
 }
 
 .content {
   @include grid-column(1, $article-layout-grid);
 }
 
+.viewport{
+  margin: 0 auto;
+}
+
+.bookShow{
+  padding:20px;
+  background-color: #28CD9B;
+}
+
 $book-grid: (
-        columns: 4,
-        gutter: 20px,
+        columns: 6,
 );
 
-.book{
-  text-align: center;
-  color: #000000;
-  font-size: 20px;
-  border: 2px solid rgba(255, 144, 10, 0.44);
-  margin-bottom: 10px;
-  .contener{
-    @include grid-container;
-    .col-1 {
-      @include grid-column(1,$book-grid);
-    }
-    .col-2 {
-      @include grid-column(2,$book-grid);
-    }
-    .col-3 {
-      @include grid-column(3,$book-grid);
-    }
+.book-link{
+  display: block;
+  margin-top: 1vh;
+  background-color: #28CD9B;
+}
 
+.book{
+  text-align: left;
+  color: #000000;
+  height: 6vh;
+  @include grid-container;
+  .col-1 {
+    @include grid-column(1,$book-grid);
+    height: 6vh;
+  }
+  .col-2 {
+    @include grid-column(2,$book-grid);
+    height: 6vh;
+  }
+  .col-3 {
+    @include grid-column(3,$book-grid);
+    height: 6vh;
+  }
+  h2{
   }
   .title{
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin: 0px;
+    font-size: 2vh;
+    padding-top: 1.5vh;
   }
   .author{
-    margin-bottom: 5px;
+    margin: 0;
+    font-size: 2vh;
+    padding-top: 1.5vh;
   }
+  .on_loan{
+    margin: 0;
+    font-size: 2vh;
+    padding-top: 1.5vh;
+  }
+
 }
 
 
 //説明文を指定した高さで省略
 // Variables
 $container-bg: #eee;
-$font-size-base: 14px;
+$font-size-base: 16px;
 $line-height-computed: 1.4;
 $lines-to-show: 3;
 
@@ -104,7 +159,7 @@ p {
 // Multiline text with ellipsis
 // Supported IE and Firefox
 .description {
-  background: white;
+  background-color: rgba(0,0,0,0);
   overflow: hidden;
   width: 100%;
   p {
@@ -115,7 +170,7 @@ p {
     position: relative;
     &:before,
     &:after {
-      background: white;
+      background-color: rgba(255,255,255,0);
       position: absolute;
     }
     &:before {
@@ -134,21 +189,22 @@ p {
 $container-bg: #eee;
 $font-size-base2: 16px;
 $line-height-computed: 1.4;
-$lines-to-show: 3;
+$lines-to-show: 1;
 
 .title {
-  background: white;
+  background-color: rgba(0,0,0,0);
   overflow: hidden;
   width: 100%;
+  //line-height: 0.5rem;
   h2 {
-    font-size: $font-size-base2;
-    height: $font-size-base2 * $line-height-computed * $lines-to-show;
+    //font-size: $font-size-base2;
+    //height: $font-size-base2 * $line-height-computed * $lines-to-show;
     line-height: $line-height-computed;
     text-align: left;
     position: relative;
     &:before,
     &:after {
-      background: white;
+      background-color: rgba(255,255,255,0);
       position: absolute;
     }
     &:before {
@@ -162,4 +218,14 @@ $lines-to-show: 3;
       width: 100%;
     }
   }
+}
+
+.borrowing{
+  background-color: #28CD9B;
+  width: 100%;
+}
+
+.borrowed{
+  background-color: #28CD9B;
+  width: 100%;
 }

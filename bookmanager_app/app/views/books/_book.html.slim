@@ -1,19 +1,15 @@
 = link_to(book_path(book.id), class: 'book-link')
   .book
-    .contener
-      .col-2.title
-        h2
-          = book.title
-      .col-2
-        h3.author
-          = book.author
-    .contener
-      .col-2.description
-        p
-          = book.description
-      .col-2
-        h3.on_loan
-          - if book.on_loan
-            | 貸出中
-          - else
-            | 貸出OK
+    .col-3
+      h2.title
+        = book.title
+    .col-2
+      h3.author
+        = book.author
+    .col-1
+      h3.on_loan
+        - if book.on_loan
+          | 貸出中
+        - else
+          | 貸出OK
+p
