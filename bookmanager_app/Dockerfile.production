@@ -16,5 +16,6 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 COPY Gemfile Gemfile.lock ./
 RUN gem update bundler && bundle install
 COPY . $APP_ROOT
+
 RUN rails assets:precompile
 
