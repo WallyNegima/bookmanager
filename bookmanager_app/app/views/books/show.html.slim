@@ -11,3 +11,10 @@
   p
   - unless @book.on_loan
     = link_to 'かりる', ledgers_path(params: {id: @book.id}), :method => :post
+
+css:
+  p{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    line-height: 1.8;
+  }
