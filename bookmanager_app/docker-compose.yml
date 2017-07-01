@@ -7,6 +7,7 @@ services:
     command: bundle exec rails s -p 80 -b '0.0.0.0'
     environment:
       DB_HOST: db
+      SECRET_KEY_BASE: 1beb94daef0ea8149b0be324d5978fa4995a152a387df528f1bc92feb2d8bb2116be334d1d96a0201fb596c79f66b58478adec28c8de30d901e593502613b693
     volumes:
       - .:/app
       - bundle:/app/bundle

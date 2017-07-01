@@ -5,9 +5,14 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: bundle exec unicorn -p 3000 -c /app/config/unicorn.rb
+#    command: bundle exec rails s -p 3000 -b '0.0.0.0'
     environment:
       DB_HOST: db
       SECRET_KEY_BASE: 1beb94daef0ea8149b0be324d5978fa4995a152a387df528f1bc92feb2d8bb2116be334d1d96a0201fb596c79f66b58478adec28c8de30d901e593502613b693
+#      DB_HOST: 'localhost'
+#      DB_NAME: 'bookmanager_app_production'
+#      DB_USERNAME: 'root'
+#      DB_PASSWORD: ''
     volumes:
       - .:/app
       - bundle:/app/bundle
@@ -22,10 +27,6 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      DB_HOST: 'localhost'
-      DB_NAME: 'bookmanager_app_production'
-      DB_USERNAME: 'root'
-      DB_PASSWORD: ''
     volumes:
       - db_data:/var/lib/mysql
     ports:

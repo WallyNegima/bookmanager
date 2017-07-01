@@ -12,7 +12,7 @@ development:
 
 production:
   <<: *default
-  host:     <%= ENV['DB_HOST'] %>
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  host:     <%= ENV['DB_HOST'] || '127.0.0.1' %>
+  database: <%= ENV['DB_NAME'] || 'bookmanager_app_production' %>
+  username: <%= ENV['DB_USERNAME'] || 'root' %>
+  password: <%= ENV['DB_PASSWORD'] || '' %>
